@@ -202,6 +202,12 @@ public class EncryptionUtil {
 
 			request.setRequest(cryptomanagerRequestDto);
 			cryptomanagerRequestDto.setTimeStamp(localdatetime);
+			LOGGER.info(
+			    IdRepoSecurityManager.getUser(),
+			    LoggerFileConstant.REQUEST_ID.toString(),
+			    requestId,
+			    "CRYPTOMANAGER_ENCRYPT Request Payload: " + mapper.writeValueAsString(request)
+			);
 			String response = restUtil.postApi(ApiName.CRYPTOMANAGER_ENCRYPT, null, "", "", MediaType.APPLICATION_JSON,
 					request, String.class);
 

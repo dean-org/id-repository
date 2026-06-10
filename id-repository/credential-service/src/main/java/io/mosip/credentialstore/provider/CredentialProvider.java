@@ -512,4 +512,7 @@ public class CredentialProvider {
 		Serializable serializable = MVEL.compileExpression("formatName(firstName,middleName,lastName);");
 		return MVEL.executeExpression(serializable, context, myVarFactory, String.class);
 	}
+	private boolean isFaceRawImageAttribute(String attrName) {
+		return CredentialConstants.FACE_RAW_IMAGE.equalsIgnoreCase(attrName);
+	}
 }

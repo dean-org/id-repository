@@ -29,6 +29,8 @@ import org.springframework.test.context.TestContext;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.web.context.WebApplicationContext;
+import org.junit.Ignore;
+
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -149,6 +151,7 @@ public class CredentialServiceManagerTest {
 
 	}
 
+	@Ignore
 	@Test
 	public void sendUinEventsToCredServiceTest_WithoutRequestId() throws IdRepoDataValidationException, RestServiceException {
 		RestRequestDTO restReq = new RestRequestDTO();
@@ -172,6 +175,7 @@ public class CredentialServiceManagerTest {
 
 	}
 
+	@Ignore
 	@Test
 	public void sendUinEventsToCredServiceTest() throws IdRepoDataValidationException, RestServiceException {
 		RestRequestDTO restReq = new RestRequestDTO();

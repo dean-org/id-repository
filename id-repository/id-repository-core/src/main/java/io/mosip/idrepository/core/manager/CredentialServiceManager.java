@@ -469,7 +469,7 @@ public class CredentialServiceManager {
 					&& !requestWrapper.getRequest().getRequestId().isEmpty()
 					? Map.of(RID, requestWrapper.getRequest().getRequestId())
 					: Map.of();
-			mosipLogger.error(	IdRepoSecurityManager.getUser(),
+			mosipLogger.info(	IdRepoSecurityManager.getUser(),
 							    this.getClass().getCanonicalName(),
 							    SEND_REQUEST_TO_CRED_SERVICE,
 							    "DEBUG_CRED_REQUEST -> partnerId=" + partnerId

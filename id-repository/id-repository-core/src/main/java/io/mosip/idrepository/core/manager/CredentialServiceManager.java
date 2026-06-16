@@ -469,6 +469,18 @@ public class CredentialServiceManager {
 					&& !requestWrapper.getRequest().getRequestId().isEmpty()
 					? Map.of(RID, requestWrapper.getRequest().getRequestId())
 					: Map.of();
+			mosipLogger.error(	IdRepoSecurityManager.getUser(),
+							    this.getClass().getCanonicalName(),
+							    SEND_REQUEST_TO_CRED_SERVICE,
+							    "DEBUG_CRED_REQUEST -> partnerId=" + partnerId
+							            + ", requestId=" + requestWrapper.getRequest().getRequestId()
+							            + ", credentialType=" + requestWrapper.getRequest().getCredentialType()
+							            + ", issuer=" + requestWrapper.getRequest().getIssuer()
+							            + ", recipient=" + requestWrapper.getRequest().getRecepiant()
+							            + ", user=" + requestWrapper.getRequest().getUser()
+							            + ", restService=" + restServicesConstants.name()
+							            + ", pathParam=" + pathParam
+							);
 			response = restHelper
 					.requestSync(restBuilder.buildRequest(restServicesConstants, pathParam, requestWrapper, Map.class));
 			mosipLogger.debug(IdRepoSecurityManager.getUser(), this.getClass().getCanonicalName(),

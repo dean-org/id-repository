@@ -206,6 +206,11 @@ public class RestHelper {
 		}
 
 		if (request.getRequestBody() != null) {
+			mosipLogger.info("RestHelper", "request", "requestSync",
+			        "Outgoing request URI: " + request.getUri()
+			        + " | httpMethod: " + request.getHttpMethod()
+			        + " | headers: " + request.getHeaders()
+			);
 			exchange = requestBodySpec.syncBody(request.getRequestBody()).retrieve();
 		} else {
 			exchange = requestBodySpec.retrieve();
